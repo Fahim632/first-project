@@ -60,6 +60,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((user) => {
           dispatch(userinfo(user))
+          toast.success("login successfully done")
           localStorage.setItem("userinfo",JSON.stringify(user))
           console.log(user);
           setTimeout(()=>{
@@ -91,7 +92,7 @@ const Login = () => {
       .then((user) => {
         console.log(user);
         console.log("success");
-
+        
 
 
       }).catch((error) => {

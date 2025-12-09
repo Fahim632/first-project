@@ -7,7 +7,7 @@ const ForgotPassword = () => {
     const auth = getAuth();
 
     const [email, setemail] = useState("");
-    const[emailerr,setemailerr]= useState("")
+    const [emailerr, setemailerr] = useState("")
     const handlemail = (e) => {
         setemail(e.target.value);
         setemailerr("")
@@ -25,10 +25,10 @@ const ForgotPassword = () => {
             sendPasswordResetEmail(auth, email)
                 .then((user) => {
                     console.log(user);
-                    
+
                     console.log("Send Email");
-                    
-                }) 
+
+                })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
@@ -56,16 +56,16 @@ const ForgotPassword = () => {
                         <label className="absolute top-[-12px] left-[52.6px] bg-white px-[15px] font-secondary font-semibold tracking-[4px] text-black/50">Email Address</label>
 
                         <div className='mt-[15px]'>
-                        <Link to={"/login"}
-                            // onClick={handlregistration}
-                            className="py-[10px] px-4   text-white font-secondary bg-[#1E1E1E] rounded-[8px]" >
-                            Back to Login
-                        </Link>
-                        <button
-                            onClick={handlForgotPassword}
-                            className=" ml-[10px] py-[10px] px-4   text-white font-secondary bg-[#1E1E1E] rounded-[8px] cursor-pointer" >
-                            Reset
-                        </button>
+                            <Link to={"/login"}
+                                // onClick={handlregistration}
+                                className="py-[10px] px-4   text-white font-secondary bg-[#1E1E1E] rounded-[8px]" >
+                                Back to Login
+                            </Link>
+                            <button
+                                onClick={handlForgotPassword}
+                                className=" ml-[10px] py-[10px] px-4   text-white font-secondary bg-[#1E1E1E] rounded-[8px] cursor-pointer" >
+                                Reset
+                            </button>
 
                         </div>
                     </div>
